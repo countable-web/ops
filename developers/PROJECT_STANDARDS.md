@@ -60,12 +60,24 @@ We use the [monorepo](https://dl.acm.org/doi/pdf/10.1145/2854146) pattern, meani
           Dockerfile
           package.json
           src/
+            domain1/
+            domain2/
+            features/
+              feature1/
+              feature2/
+              feature3/
       nginx/
         Dockerfile
         nginx.conf
       docker-compose.yml
 
 The front-end Dockerfile should run a development server, but for production should just build static files, into the /static folder which is served by nginx.
+
+For mature enterprise applications, it is recommended to adopt a combination of both clean and vertical slice architectures by means of colocation. This means:
+1. Placing generic files that are used all throughout the project inside their respective domain directories.
+2. Having modules be in their own self-contained directory that may also contain domain specific directories relative to the module.
+  
+Structuring files this way will help create a more flexible and manageable codebase. 
 
 ## Front End Development
 
