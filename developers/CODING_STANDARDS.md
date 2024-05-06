@@ -22,7 +22,7 @@ Covers principles of our coding standards, then branches out to specific languag
   ### Aim to understand
   Any code that you write, you should understand. If you wrote 10 lines to fix a bug, you should understand all 10 lines. Any code that is written without understanding, means you also don't understand what kind of bugs you may cause.
   - Don't copy and paste from stackoverflow/ChatGPT without first understanding it.
-  - If you're on React, you're likely going to use `useEffect` hook often. Understand it => https://react.dev/reference/react/useEffect
+  - If you're using React, you're likely going to use `useEffect` hook often. Understand it => https://react.dev/reference/react/useEffect
   - Read relevant documentation on third party libraries before using it.
 
   ### Be Explicit
@@ -32,7 +32,7 @@ Covers principles of our coding standards, then branches out to specific languag
 
   - Find the best abstraction. ie) Functional Programming for dealing with collections (advanced primitives). Inheritance for dealing with the relationships of real world objects.
 
-  If your writing classes - following the SOLID principle helps you achieve this => https://www.freecodecamp.org/news/solid-principles-for-better-software-design/#:~:text=The%20SOLID%20acronym%20stands%20for,Interface%20Segregation%20Principle%20(ISP)
+  If you're writing classes - following the SOLID principle helps you achieve this => https://www.freecodecamp.org/news/solid-principles-for-better-software-design/#:~:text=The%20SOLID%20acronym%20stands%20for,Interface%20Segregation%20Principle%20(ISP)
 
   If you're writing functions - some of the functional programming fundamentals help you achieve this => https://www.freecodecamp.org/news/functional-programming-in-javascript/
 
