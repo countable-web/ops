@@ -57,8 +57,8 @@ item_count = 5  # Integer
 Consider the book [Clean Code](https://www.oreilly.com/library/view/clean-code/9780136083238/) on
 this topic and on writing short functions.
 
-  - Names should indicate *what* a function does in *business domain language* (see "Ubiquitous Language" in Domain Driven Design).
-  - Name length should be proportional to the variable's scope size. `x` is ok in a one-liner, but not a global.
+  - Names should indicate *what* a variable is or function does in *business domain language* (see "Ubiquitous Language" in Domain Driven Design).
+  - Name length should be proportional to the variable's scope size. `x` is ok in a one liner, but not a global.
   - When an industry jargon (domain language) term is available, use that.
   - ClassNames - Classes should use an upper camel case string of nouns.
   - CONSTANT\_NAMES - Constants should be uppercase with underscores.
@@ -118,6 +118,69 @@ this topic and on writing short functions.
   - Use less code. Avoid repetition.
   - Reuse functions.
   - Find the best abstraction. ie) Functional Programming for dealing with collections (advanced primitives). Inheritance for dealing with the relationships of real world objects.
+  - Have no more than 3 nested layers of conditions and loops.
+  - Apply guard clauses and early returns for lower overhead thinking and allowing linear reads.
+
+Example:
+
+```javascript
+// Before
+function getPlantGrowthMultiplier(soilType, isPlanted, hasSunlight, isWatered) {
+  if (isPlanted) {
+    if (hasSunlight) {
+      if (soilType === "loam" && !isWatered) {
+        return 1;
+      } else if (soilType === "clay" && !isWatered) {
+        return 0.5;
+      } else if (soilType === "silty" && !isWatered) {
+        return 0.25;
+      } else if (soilType === "sandy" && !isWatered) {
+        return 0.1;
+      } else if (soilType === "loam" && isWatered) {
+        return 1.5;
+      } else if (soilType === "clay" && isWatered) {
+        return 0.75;
+      } else if (soilType === "silty" && isWatered) {
+        return 0.35;
+      } else if (soilType === "sandy" && isWatered) {
+        return 0.12;
+      } else {
+        throw new Error("Invalid soil type");
+      }
+    } else {
+      throw new Error("The plant needs sunlight");
+    }
+  } else {
+    throw new Error("The plant is not planted");
+  }
+}
+
+// After
+const SOIL_TYPES = ["loam", "clay", "silty", "sandy"];
+const [LOAM, CLAY, SILTY, SANDY] = SOIL_TYPES;
+const WATERED_SOIL_MULTIPLIERS = {
+  [LOAM]: 1.5,
+  [CLAY]: 0.75,
+  [SILTY]: 0.35,
+  [SANDY]: 0.15,
+};
+const UNWATERED_SOIL_MULTIPLIERS = {
+  [LOAM]: 1,
+  [CLAY]: 0.5,
+  [SILTY]: 0.25,
+  [SANDY]: 0.08,
+};
+
+function getPlantGrowthMultiplier(soilType, isPlanted, hasSunlight, isWatered) {
+  if (!isPlanted) throw new Error("The plant is not planted");
+  if (!hasSunlight) throw new Error("The plant needs sunlight");
+  if (!SOIL_TYPES.includes(soilType)) throw new Error("Invalid soil type");
+
+  if (isWatered) return WATERED_SOIL_MULTIPLIERS[soilType];
+
+  return UNWATERED_SOILS_MULTIPLIERS[soilType];
+}
+```
 
 ## No tabs
 
