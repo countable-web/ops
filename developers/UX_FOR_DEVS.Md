@@ -10,7 +10,7 @@ nav_order: 1
 
 ## Use Systems
   * Use Flowbite, a Figma+CSS designs system, to help make the default design obvious and attractive.
-  * When developing a component, break them apart (decomopose) based on how they will be re-used.
+  * When developing a component, break them apart (decompose) based on how they will be re-used.
   * Always check if an component you're building already exists, or a similar one does you can re-use.
 
 ## Always auto-fill default values

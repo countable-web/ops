@@ -66,7 +66,7 @@ Best practices for handling errors/ unexpected cases
     try:
        code_that_could_fail()
     except CustomArithmeticError:
-       print("Some kind of math error happened."
+       print("Some kind of math error happened.")
     
     # bad - unnecessary lines in the try block
     try:
@@ -96,7 +96,14 @@ Best practices for handling errors/ unexpected cases
     except ZeroDivisionError:
        logging.error("Division by zero with params a={} b={b}, notifying the user of bad input.".format(a, b)) # Message for devs to observe if needed.
        raise HttpResponseBadRequest("Your parameters {}-{}=0, which is not allowed because it results in division by zero. Sorry!") # Notify the user what they did wrong.
-     
+
+**Key points for effective exception handling:**
+
+   - Always catch specific exceptions rather than using a bare `except` clause.
+   - Use logging for developer-oriented messages and user-friendly messages for end-users.
+   - Keep the code in `try` blocks as minimal as possible to pinpoint the source of exceptions.
+   - Use custom exceptions for better error categorization.
+   - Include relevant parameters in error messages for easier debugging.
 
 ### Line Length
 

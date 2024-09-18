@@ -13,7 +13,7 @@ To define the base level information security policies at Countable and identify
 
 **Scope** 
 
-Currently a stub; will first include baseline principles to keep in mind, then a more formal set of processes and checklists.
+Currently, a stub; will first include baseline principles to keep in mind, then a more formal set of processes and checklists.
 
 TODO
 {: .label .label-yellow }
@@ -26,7 +26,7 @@ move actual policies we defined into here from Docs
   * With regard to sensitive information, observe the principle of least privilege. This means provide as little access as possible, but enough as necessary to get work done.
   * Avoid storing sensitive information on disk. Keep it in cloud based accounts.
   * For laptops - please encrypt your disk if you have sensitiive information or access credentials for sensitive information stored there. DevOps staff must have encrypted disks with passphrase (entropy as above)
-  * Working from WiFi outside your home network? Use a VPN.
+  * Working from Wi-Fi outside your home network? Use a VPN.
 
 ## See Also
 

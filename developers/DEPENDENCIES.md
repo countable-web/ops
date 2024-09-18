@@ -13,7 +13,7 @@ This page covers dependency and framework selection and management. See also [he
 
 **Scope**
 
-Currently the page gives overall guidance on picking dependencies, and provides more specific deep guidance on Javascript frameworks in particular.
+Currently, the page gives overall guidance on picking dependencies, and provides more specific deep guidance on Javascript frameworks in particular.
 
 ## How to Pick Dependencies
 
@@ -30,18 +30,18 @@ Javascript frameworks are a big discussion and there isn't a nice answer IMO.
 
 The problem is our projects often live for 5 to 10 years. *Javascript frameworks do not.*
 
-The problem of using the "framework of the day" is that Javascript frameworks only grow for about 3 years and then they always slowly die.
+The problem of using the "framework of the day" is that Javascript frameworks only grow for about 3 years, and then they always slowly die.
 
 jQuery is slowly fading away now, Angular has peaked and is losing market share to React. 
 
 React is close to peaking and is starting to lose
-to Vue. By next year, Vue will be more popular than either Angular and React and it's a better framework so the answer is to use Vue, right?
+to Vue. By next year, Vue will be more popular than either Angular and React, and it's a better framework so the answer is to use Vue, right?
 
 The problem is, we build 5 apps in Vue, and then something else replaces it in 2 to 3 years, and we now have to support old apps in so many frameworks with dying communities. here are Pros and Cons of the major
 frameworks we consider:
 
   - jQuery is kind of unique since it's really a DOM library and not a framework. It's largely unnecessary now except as a plugin dependency and for animations. Otherwise, document.querySelector has replaced it (along with other modern dom methods, and fetch()). jQuery is also quite unprescriptive and so relatively harmless as a dependency compared to other libraries.
-  - Angular is currently a bit of a mess because it's split into 2 communities, Angular and AngularJS which are diverging frameworks.It also prescribes a lot of things like how to do Ajax, for no reason. However, we have it in several projects and it does the 2 way dom binding well making complex UI interactions simple.
+  - Angular is currently a bit of a mess because it's split into 2 communities, Angular and AngularJS which are diverging frameworks.It also prescribes a lot of things like how to do Ajax, for no reason. However, we have it in several projects, and it does the 2 way dom binding well making complex UI interactions simple.
   - React is nicely scoped to just a single purpose, the view. And it's not split up like Angular is into 2 communities. However, while it doesn't over-prescribe in your application architecture, it does want you to use Webpack and require based architecture, which is awkward to work into existing projects. This (like angular) makes it tend towards an all or nothing approach. We also don't currently use React so it seems better not to throw it on the pile. Preact seems strictly better since it's identical but faster, with less plugin support.
   - Vue suffers none of the above issues and is an easy to learn, succinct 2 way binding lib. But, do we want to start using yet another lib that does the same thing?
   - Riot is like Vue or React, but simpler and less popular. Riot works well with Django because it has a powerful interoperability mechanism (observer pattern), and doesn't really prescribe much of anything so it's easy to add in at any time. However, Riot also has some fragmentation in its community, as v4 was a complete rewrite and introduced breaking changes from v3. Our projects still use Riot v3.

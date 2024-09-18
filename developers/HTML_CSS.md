@@ -69,7 +69,7 @@ Use the [Prettier autoformatter and standard](https://github.com/prettier/pretti
   - Try to write classes to be modular and reusable. This means that classes should reflect their function (e.g. `.success-message`) rather than the page element (`.my-feature-message`) if possible.
   - Separate globally applicable CSS by typography, colors, layout and reset.
   - Break CSS up by component. Some frameworks encourage or endorse this, but it's a good practice for all projects.
-  - Don't use capital letters or underscores for selector (class, id) names. Use dashes and lowerase.
+  - Don't use capital letters or underscores for selector (class, id) names. Use dashes and lowercase.
   - Avoid inline styling, use classes instead.
 
 ```

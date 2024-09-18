@@ -21,11 +21,11 @@ Countable uses [git flow](https://jeffkreeftmeijer.com/git-flow/) for branch nam
 
 ![image](/assets/images/git-flow.png)
 
-1.  `develop` is the main branch developers work on and test.
-2.  `master` is the "staging" branch, where the upcoming release is deployed weekly for testing and previews among the team.
-3.  `release` is the stable branch released to production. (most projects do not use release branches, we just continuously deploy `master`)
-3.  `feature/my-feature-name` feature branches contain your work for up to one day, before being merged back into `develop`.
-4.  `hotfix/my-bug-name` hotfix branches are merged into `master` to fix urgent problems in production.
+1. `develop` is the main branch developers work on and test.
+2. `master` is the "staging" branch, where the upcoming release is deployed weekly for testing and previews among the team.
+3. `release` is the stable branch released to production. (most projects do not use release branches, we just continuously deploy `master`)
+4. `feature/my-feature-name` feature branches contain your work for up to one day, before being merged back into `develop`.
+5. `hotfix/my-bug-name` hotfix branches are merged into `master` to fix urgent problems in production.
 
 Our feature branches are owned by a single person and very short-lived, see [trunk based development](https://paulhammant.com/2013/04/05/what-is-trunk-based-development/).
 
@@ -56,7 +56,7 @@ From the latter:
 
 (Git will print out a link in the terminal that you may open to quickly create a pull request.)
 
-3.  Test that your changes dont't break anything.
+3.  Test that your changes don't break anything.
 
 Run automated tests and check things you know other team members are
 actively working on still work.
@@ -112,7 +112,9 @@ develop in this case.
 
 When you create your pull request:
 
-  - Review it on BitBucket yourself because it lets you find embarassing
+  - Remember to run Linting if applicable.
+  - It’s best to check the tests pass before merging (but you’ll be notified if they fail in Slack anyway). Don’t break the tests in `develop` for long… If you do, fix them ASAP because other devs will be unable to test their work otherwise.-
+  - Review it on BitBucket yourself because it lets you find embarrassing
     mistakes without your team seeing them ;)
   - Comment on specific lines you want the reviewer to notice.
   - Check the checkbox option to automatically delete the branch after
@@ -121,9 +123,7 @@ When you create your pull request:
     the code at any time based on the team's needs. Communicate about
     what you're doing. If code is merged before you review, the reviewer
     can still add comments and changes can be patched in as needed.
-  - Do not merge unless the tests are passing. Don't break the tests in
-    `develop`. If you do, fix them ASAP because other devs will be
-    unable to test their work otherwise.
+
 
 ## Tips for Code Reviews
 

@@ -102,21 +102,19 @@ See [Meetings](MEETINGS.md)
 
 Slack is for asynchronous, non-critical, informal coordination and updates.
 
-Use the following notification setting. You should only be notified when people direct message or mention you, and only during your work hours.
+Use the following notification setting: You should only be notified when people direct message or mention you, and only during your work hours.
 
-![Slack Notification Setting](/assets/images/recommended-slack-setting.png)
-
-  - Go straight to the point. Don't send people messages to check if someone's online, like "Clark", "hey, you there?", or "Can I ask you a question?". This sucks, because the person now has to stare at the screen for 2 minutes while you write them a message. Just get to the point and don't worry about when, they'll reply when they can. The expected response time on slack is up to 4 hours during the recipient's work hours, so they should check it twice a day. When people are in "focus mode", they shouldn't have slack open as it's a distraction.
-  - Slack is ok for reminders about tasks, but isn't meant for assigning something critical, especially to the whole company. Use Trello + email for that.
+  - If you're going away for more than 1 hour during the day when you normally work, notify your team in #general. If you're taking less than 1 hour, avoid the clutter :) There are lots of people who will have to read your message.
   - If the message could be useful to more than one person, post it in the most relevant public or project channel.
-  - No instant reply required. Our communication priority order is: 1) Call/Text 2) Slack 3) Email 4) Trello 5) Reddit
-  - Try to interact with the team about twice per work day on Slack, but don't leave it open all day, you need some quiet time to focus on work. Catch up on your channels, skim and respond where needed.
-  - If you read something on a public slack channel, understand it, and find it useful, please give a thumbs up or whatever emoticon. It helps the people who post in public channels the most to know who's read things and what to post.
-  - For group action items, use email instead, and set a deadline.
-  - The perfect example of what to use Slack for is:
-    1.  When you're blocked by something, make noise to the team  channel.
-    2. Create clarity around objectives and user stories. State your understanding in your own words, so teammates can confirm we're on
-    the same page.
+  - No instant reply required, but you should reply within a few hours. Our communication priority order is: 1) Call/Text 2) Slack 3) Email 4) Notion
+  - Catch up with your team at least twice per work day on Slack, but don't leave it open all day, you need some quiet time to focus on work. Catch up on your channels, skim and respond where needed.
+  - Be sure to reply to **@mentions** and **direct messages** as a priority. You can see these listed at the bottom of the sidebar.
+  - Use Emojis! A thumbs up can help the people who post in public channels know who's read things and what kind of posts are helpful.
+  - Good examples of what to use Slack for:
+    1. When you're blocked by something, make noise to the team  channel.
+    2. Create clarity on shared goals.
+    3. Share your work for feedback.
+  - Go straight to the point. Don't send people messages to check if someone's online, like "Clark", "hey, you there?", or "Can I ask you a question?". This sucks, because the person now has to stare at the screen for 2 minutes while you write them a message. Just get to the point and don't worry about when, they'll reply when they can. The expected response time on slack is up to 4 hours during the recipient's work hours, so they should check it twice a day. When people are in "focus mode", they shouldn't have slack open as it's a distraction.
 
 ## End of the Day (EOD) report 
 

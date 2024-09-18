@@ -12,7 +12,7 @@ Lay the groundwork for continuous learning at Countable, demonstrating how to pu
 
 **Scope**
 
-Currently covers "how to learn" and recommends dev-specific resources.
+Currently, covers "how to learn" and recommends dev-specific resources.
 
 ## How To Learn
 

@@ -45,7 +45,7 @@ These are the most preferred libraries, but if the project is heavily invested i
 
 ## Performance
 
-ie) We should use Fetch if possible because it saves 50KB. This may not sound like much but makes a big difference in the long run. Most web apps take 5 seconds to load on an average connection becasue of devs making many small decisions to add size to the bundle which hits our load time both in terms of bundle transfer but in JS parsing, and this leads to a mediocre experience. When a busy (and perhaps, highly paid) person is in a hurry, it's excruciating to wait a few extra seconds. This is made far worse for browser extensions which have to load IN ADDITION to the base website and all the other extensions so they especially need to be lean. What is the rationale for using Axios? (edited) 
+ie) We should use Fetch if possible because it saves 50KB. This may not sound like much but makes a big difference in the long run. Most web apps take 5 seconds to load on an average connection because of devs making many small decisions to add size to the bundle which hits our load time both in terms of bundle transfer but in JS parsing, and this leads to a mediocre experience. When a busy (and perhaps, highly paid) person is in a hurry, it's excruciating to wait a few extra seconds. This is made far worse for browser extensions which have to load IN ADDITION to the base website and all the other extensions so they especially need to be lean. What is the rationale for using Axios? (edited) 
 
 # Vue and React
 
@@ -57,7 +57,7 @@ ie) We should use Fetch if possible because it saves 50KB. This may not sound li
 # Error Handling
 Good error handling can save tremendous amounts of time for your team.
  - Display useful diagnostic info on failures in the console and on the screen.
- - Make errors specific to the operation being performed. You can have nexted try/catch blocks as needed to attain this.
+ - Make errors specific to the operation being performed. You can have nested try/catch blocks as needed to attain this.
  - Consider that when your application fails, users will probably send you a screenshot. You want to make sure that screenshot contains the information to debug the issue.
  - Your error message to the user should explain how it affects them and what steps to take if possible.
  - Put context variables in your error string (no personal health info of course). `Failed to save user ID ${user.id}`

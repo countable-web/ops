@@ -197,3 +197,6 @@ pull request. The rules:
   - [Buffer](https://open.buffer.com/) Is a radically transparent company that publishes internals too\! We love and admire them for it :)
   - [X team](https://x-team.com/remote-team-guide/) has been proactive in publishing their processes online in some detail on their website.
   - [netlify culture handbook](https://github.com/netlify/culture-handbook)
+  - [high performance org reading list](https://github.com/pdfernhout/High-Performance-Organizations-Reading-List?tab=readme-ov-file#reinventing-organizations-a-guide-to-creating-organizations-inspired-by-the-next-stage-of-human-consciousness)
+
+    

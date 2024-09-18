@@ -29,9 +29,9 @@ This doesn't mean you should make a mess, it means you should keep it simple and
 
 ## Get A Prototype in Front of Real Users ASAP
 
-1.   *Get a prototype in front of real users ASAP*. 
+1. *Get a prototype in front of real users ASAP*. 
    - All that matters is the absolutely most core functions work reasonably well and it's easy to understand. 
-   - Therefore put effort into **clear design** and the **most basic feature set**. *Not* into *scalability*, *code quality*, or anything else.
+   - Therefore, put effort into **clear design** and the **most basic feature set**. *Not* into *scalability*, *code quality*, or anything else.
 2.   If you receive a positive market response, THEN refactor and clean up your code, add tests, and move to a larger user base, step 4.
 3.   If you need to pivot, you'll have no remorse or attachment to your crappy implementation. You're back to step 1, and can keep whatever parts are still useful.
 4.   Now, if your larger user base is engaged and growing, you can work on scalability and final architecture.

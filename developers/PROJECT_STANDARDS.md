@@ -60,12 +60,24 @@ We use the [monorepo](https://dl.acm.org/doi/pdf/10.1145/2854146) pattern, meani
           Dockerfile
           package.json
           src/
+            domain1/
+            domain2/
+            features/
+              feature1/
+              feature2/
+              feature3/
       nginx/
         Dockerfile
         nginx.conf
       docker-compose.yml
 
 The front-end Dockerfile should run a development server, but for production should just build static files, into the /static folder which is served by nginx.
+
+For mature enterprise applications, it is recommended to adopt a combination of both clean and vertical slice architectures by means of colocation. This means:
+1. Placing generic files that are used all throughout the project inside their respective domain directories.
+2. Having modules be in their own self-contained directory that may also contain domain specific directories relative to the module.
+  
+Structuring files this way will help create a more flexible and manageable codebase. 
 
 ## Front End Development
 
@@ -74,7 +86,7 @@ DRAFT
 
 Front-end development is exciting, but also a challenge. This is due to the fact that there are so many tools available for so many different things, and this side of the world moves fast. Main considerations:
 
-1.  **Browser compability** - Does the website look good on Chrome? Firefox? Ipad? Galaxy? iPhone?
+1.  **Browser compatibility** - Does the website look good on Chrome? Firefox? Ipad? Galaxy? iPhone?
 2.  **Device compatibility** (Responsive Design) - On monitors that are not 1080p? 10 inch laptops at 1280 x 720?
 3.  **Automation** - Nowadays, you don't necessarily need to CODE for this, since there are tools like Babel, Normalize.css, Autoprefixer which help make this happen.
 
@@ -88,7 +100,7 @@ On larger sites with an accessibility budget:
 
 Tooling for different areas can be in any of the following status:
 
-  - *Unspecified* - Use whatever you want as long as it's well supported.
+  - *Unspecified* - Use whatever you want as long as it's well-supported.
   - *Recommendation* - We recommend using a specific tool, but developer expertise or another reason could override this.
   - *Standard* - You should only deviate from this tooling choice for a specific reason.
 

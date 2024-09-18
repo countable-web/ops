@@ -15,7 +15,7 @@ Encourage consistent and effective coding practices in the team, arising out of 
 
 Covers principles of our coding standards, then branches out to specific language pages.
 
-[Philosophy of Sofware Design](https://www.amazon.com/Philosophy-Software-Design-John-Ousterhout/dp/1732102201) is highly recommended reading. It's the book which will make you a better programming in the ways that matter most.
+[Philosophy of Software Design](https://www.amazon.com/Philosophy-Software-Design-John-Ousterhout/dp/1732102201) is highly recommended reading. It's the book which will make you a better programming in the ways that matter most.
 
 ## Fundamentals
 
@@ -110,20 +110,20 @@ This quick example takes you through most of the fundamentals listed above. Firs
 
   - Spend AT LEAST 10% of your time on writing tests and refactoring to reduce complexity.
   - Follow conventions. For projects that do not currently follow our standards (open source, or new projects shared with other dev teams) but follows a different one, stick with that project's conventions unless we make a conscious decision to refactor the whole thing. Don't mix conventions.
-  - Make life easier for your team mates and future self by being consistent and thoughtful of what someone unfamiliar would think. The goal is your code should be obvious and easy to understand for a new programmer. Stick to conventions, and use comments to explain the story of your code, and why things are done a particular way.
+  - Make life easier for your teammates and future self by being consistent and thoughtful of what someone unfamiliar would think. The goal is your code should be obvious and easy to understand for a new programmer. Stick to conventions, and use comments to explain the story of your code, and why things are done a particular way.
   - Humans should not spend time thinking about whitespace formatting. We use auto-formatters in place of coding standards in every case possible.
   - Don't keep dead (unused) code. For example, if you copy code, never leave the old copy in GIT. For example, a file like `index.html.old` that isn't used.
 
 ## Literature
 
-We are observe teh following literature.
+We are observe the following literature.
 
   - [Domain Driven Design](https://en.wikipedia.org/wiki/Domain-driven_design) - We use Domain Modelling in our work
   - [12 factor App Methodology](https://12factor.net/) - We use Container based deployments
   - [Trunk based development](https://trunkbaseddevelopment.com/) - We use Trunk Based development
   - [Agile Manifesto](https://agilemanifesto.org/) - We use Scrum
   - [Clean Code](https://www.oreilly.com/library/view/clean-code/9780136083238/) - We write readable code
-  - [A Philisophy of Software Design](https://www.amazon.ca/Philosophy-Software-Design-John-Ousterhout/dp/1732102201) - We build for the long term
+  - [A Philosophy of Software Design](https://www.amazon.ca/Philosophy-Software-Design-John-Ousterhout/dp/1732102201) - We build for the long term
 
 ## Names
 
@@ -131,10 +131,17 @@ This section refers to the names of variables, database columns, classes, and an
 
 Variables should hint what their data types are: in one glimpse I should be able to tell if a variable is e.g. a Boolean, string, etc.
 
+**Example:**
+```python
+is_active = True  # Boolean
+user_name = "Alice"  # String
+item_count = 5  # Integer
+```
+
 Consider the book [Clean Code](https://www.oreilly.com/library/view/clean-code/9780136083238/) on
 this topic and on writing short functions.
 
-  - Names should indicate *what* a function does in *business domain language* (see "Ubiquitous Language" in Domain Driven Design).
+  - Names should indicate *what* a variable is or function does in *business domain language* (see "Ubiquitous Language" in Domain Driven Design).
   - Name length should be proportional to the variable's scope size. `x` is ok in a one liner, but not a global.
   - When an industry jargon (domain language) term is available, use that.
   - ClassNames - Classes should use an upper camel case string of nouns.
@@ -143,7 +150,7 @@ this topic and on writing short functions.
 ## Files
 
   - Filenames should be lowercase with dashes (NOT SPACES) to separate words *except* for Python, which uses underscores in place of dashes.
-  - The purpose, and contents of any file should be as obvious as possible by its filename and location. **Throw in an example**
+  - The purpose and contents of any file should be as obvious as possible by its filename and location. **Throw in an example**
   - Avoid repeated or unnecessary code, except where doing so is much more clear. Keep in mind less code is actually easier to understand, all other things being equal. So, it bears repeating, use the minimum amount of code in declarative domain language. Using the wrong abstraction can be worse than repeated code.
   - Consider organizing by [colocation](https://povio.com/blog/maintainability-with-colocation/)
 
@@ -154,16 +161,28 @@ this topic and on writing short functions.
   - Use pure functions where practical, and avoid side effects and global state.
   - Modules should be responsible for a specific task or set of RELATED tasks.
   - Modules should communicate through easily testable interfaces. A huge hierarchy of objects shouldn't be required to test a single method, because the method should only take arguments it actually uses (not a big tree which happens to contain those)
+      **Example:**
+      ```text
+      # Bad: Complex dependency
+      def process_order(order: Order):
+          user = order.get_user()
+          payment = user.get_payment_method()
+          # ... do something with payment
+      
+      # Good: Simplified dependency
+      def process_order(user: User, payment_method: PaymentMethod):
+          # ... process the order
+      ```    
 
 ## Error Handling
 
-  - Error messages must be uniquly identifiable so the root cause in code can be traced. They should contain unique text.
+  - Error messages must be uniquely identifiable so the root cause in code can be traced. They should contain unique text.
 
   - The developer must differentiate between failures of our system and failures of other systems, because they are handled very differently.
 
   - When our system behaves incorrect, there should be a "500" error (often a stack trace), and it should be sent to a high urgency tracker like Sentry. These errors are a system design flaw that should always be fixed by us permanently. We should never 'expect' anything to appear in Sentry. We should be willing to bet it will always be empty.
 
-  - By contrast, when external systems fail (users enter something invalid, an external API rejects data, etc), these failures should result in a "400" error. They often will not require a code change by us, and should not be tracked in Sentry. They can generally be tracked in our application logs at the WARNING or ERROR level, and where possible, give feedback directly to the failed system (ie, tell the user their data is invalid).
+  - By contrast, when external systems fail (users enter something invalid, an external API rejects data, etc.), these failures should result in a "400" error. They often will not require a code change by us, and should not be tracked in Sentry. They can generally be tracked in our application logs at the WARNING or ERROR level, and where possible, give feedback directly to the failed system (ie, tell the user their data is invalid).
  
   - When we are in an invalid state, it's better to throw an exception and avoid corrupting data or causing more confusing downstream issues. Catch errors early and loudly.
 
@@ -174,10 +193,78 @@ this topic and on writing short functions.
   - Do not comment what is obvious from the code. "\# Increment the variable." is not a good comment.
   - Do Document the rationale "why", the reason behind an implementation choice.
   - Use TODO comments to indicate your intent for future work.
-  - Comment beside anything that's unintutive or unexpected to another reader.
+  - Comment beside anything that's unintuitive or unexpected to another reader.
   - Do not leave actual code commented out unless you have a good reason. If you do have one, document that reason as a comment as well.
   - See [this excellent guide from Stack Overflow's team](https://stackoverflow.blog/2021/07/05/best-practices-for-writing-code-comments/).
 
+## Minimize Code
+
+  - Use less code. Avoid repetition.
+  - Reuse functions.
+  - Find the best abstraction. ie) Functional Programming for dealing with collections (advanced primitives). Inheritance for dealing with the relationships of real world objects.
+  - Have no more than 3 nested layers of conditions and loops.
+  - Apply guard clauses and early returns for lower overhead thinking and allowing linear reads.
+
+Example:
+
+```javascript
+// Before
+function getPlantGrowthMultiplier(soilType, isPlanted, hasSunlight, isWatered) {
+  if (isPlanted) {
+    if (hasSunlight) {
+      if (soilType === "loam" && !isWatered) {
+        return 1;
+      } else if (soilType === "clay" && !isWatered) {
+        return 0.5;
+      } else if (soilType === "silty" && !isWatered) {
+        return 0.25;
+      } else if (soilType === "sandy" && !isWatered) {
+        return 0.1;
+      } else if (soilType === "loam" && isWatered) {
+        return 1.5;
+      } else if (soilType === "clay" && isWatered) {
+        return 0.75;
+      } else if (soilType === "silty" && isWatered) {
+        return 0.35;
+      } else if (soilType === "sandy" && isWatered) {
+        return 0.12;
+      } else {
+        throw new Error("Invalid soil type");
+      }
+    } else {
+      throw new Error("The plant needs sunlight");
+    }
+  } else {
+    throw new Error("The plant is not planted");
+  }
+}
+
+// After
+const SOIL_TYPES = ["loam", "clay", "silty", "sandy"];
+const [LOAM, CLAY, SILTY, SANDY] = SOIL_TYPES;
+const WATERED_SOIL_MULTIPLIERS = {
+  [LOAM]: 1.5,
+  [CLAY]: 0.75,
+  [SILTY]: 0.35,
+  [SANDY]: 0.15,
+};
+const UNWATERED_SOIL_MULTIPLIERS = {
+  [LOAM]: 1,
+  [CLAY]: 0.5,
+  [SILTY]: 0.25,
+  [SANDY]: 0.08,
+};
+
+function getPlantGrowthMultiplier(soilType, isPlanted, hasSunlight, isWatered) {
+  if (!isPlanted) throw new Error("The plant is not planted");
+  if (!hasSunlight) throw new Error("The plant needs sunlight");
+  if (!SOIL_TYPES.includes(soilType)) throw new Error("Invalid soil type");
+
+  if (isWatered) return WATERED_SOIL_MULTIPLIERS[soilType];
+
+  return UNWATERED_SOILS_MULTIPLIERS[soilType];
+}
+```
 
 ## No tabs
 
