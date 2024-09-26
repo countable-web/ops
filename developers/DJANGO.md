@@ -85,6 +85,7 @@ For example, `urls.py` should really only import from `views.py` (and `utils.py`
       - You should usually avoid DateField, and it's better to store DateTimeField because then we can switch timezones later on if needed. (Most events do have time at which they occurred, and that should be stored.)
       - Store Datetimes in the database in UTC.
       - Only convert to a specific timezone at the View/Template layer (when rendering or collectin information from the user).
+      - Note Python has several timezone libraries that can sometimes [conflict or have performance issues](https://blog.ganssle.io/articles/2018/03/pytz-fastest-footgun.html). The fast and correct way to set a timezone of a datetime object is `dt_object.replace(tzinfo=ZoneInfo("America/Pacific"))` .
 
 ### Managing Environments
 
