@@ -32,9 +32,13 @@ Use the long term support version of Django, ideally the latest one available at
 
 ## Read 2 Scoops of Django
 
-This book contains a lot of great practices, which we *almost* universally agree with. In particular:
+[This](https://mongard.s3.ir-thr-at1.arvanstorage.com/Two%20Scoops%20of%20Django%203.x%20by%20Daniel%20Audrey%20Feldroy%20(z-lib.org).pdf) book contains a lot of great practices, which we *almost* universally agree with. In particular:
 
   - Fat models, skinny views. Put more logic and code in Model methods, if it's relevant to that model specifically. Avoid large amounts of code in views.
+
+## Learn Database Basics
+
+Django's ORM is amazing most of the time. But it's very easy to do the wrong thing. [This](https://thebuild.com/presentations/unbreaking-django.pdf) is a great deck that covers the many caveats of the ORM and how to avoid them, recommended for advanced Django users in particular since it assumes some basic knowledge. If it's too dense, read 2 scoops (above) first.
 
 ## Patterns
 
