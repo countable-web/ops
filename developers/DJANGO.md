@@ -90,7 +90,7 @@ For example, `urls.py` should really only import from `views.py` (and `utils.py`
       - Store Datetimes in the database in UTC.
       - Only convert to a specific timezone at the View/Template layer (when rendering or collectin information from the user).
       - Note Python has several timezone libraries that can sometimes [conflict or have performance issues](https://blog.ganssle.io/articles/2018/03/pytz-fastest-footgun.html). The fast and correct way to set a timezone of a datetime object is `dt_object.replace(tzinfo=ZoneInfo("America/Pacific"))` .
-
+      - Do not use the default server timezone or hardcode a timezone at any point. You should use UTC, or get the specific timezone from the domain objects (frontend UI should specify it)
 ### Managing Environments
 
   - Django should have SMTP creds, and should set the ADMINS to the back-end developer that maintains that project. Or, use sentry\_sdk with [sentry.countable.ca](sentry.countable.ca)
