@@ -109,12 +109,14 @@ Use the following notification setting: You should only be notified when people 
   - No instant reply required, but you should reply within a few hours. Our communication priority order is: 1) Call/Text 2) Slack 3) Email 4) Notion
   - Catch up with your team at least twice per work day on Slack, but don't leave it open all day, you need some quiet time to focus on work. Catch up on your channels, skim and respond where needed.
   - Be sure to reply to **@mentions** and **direct messages** as a priority. You can see these listed at the bottom of the sidebar.
-  - Use Emojis! A thumbs up can help the people who post in public channels know who's read things and what kind of posts are helpful.
+  - Use Emojis! A thumbs up can help the people who post in public channels know who's read things and what kind of posts are helpful. Be sure to thumbs up any mention of your username to show you've seen it.
   - Good examples of what to use Slack for:
     1. When you're blocked by something, make noise to the team  channel.
     2. Create clarity on shared goals.
     3. Share your work for feedback.
   - Go straight to the point. Don't send people messages to check if someone's online, like "Clark", "hey, you there?", or "Can I ask you a question?". This sucks, because the person now has to stare at the screen for 2 minutes while you write them a message. Just get to the point and don't worry about when, they'll reply when they can. The expected response time on slack is up to 4 hours during the recipient's work hours, so they should check it twice a day. When people are in "focus mode", they shouldn't have slack open as it's a distraction.
+  - Use Slack reminders liberally, when action is required. ie `/remind me to check in with Customer about their feature release, on Monday at 9am` , or click the kebab and choose the 'Remind me about this'.
+  - When mentioning someone, always be very clear what you expect from them rather than open ended. Good: "Clark, let me know if you're ok with all the above?", Bad: "Clark, thoughts?"
 
 ## End of the Day (EOD) report 
 
