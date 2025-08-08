@@ -220,3 +220,5 @@ Note: if you're confused about the reverse foreign key lookup, the [Django docs]
 >>> clinic.specialization [press tab to autocomplete]
 clinic.specializationpolicies_set(  clinic.specializations(
 ```
+
+Note: an exception to this rule is when writing management commands. In that case, it's often expected that you are looping through all of the objects of a certain type across all clinics, often to batch update some attributes.
